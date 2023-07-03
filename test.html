@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  span{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100px;
+    height:40px;
+    border:1px solid #000;
+    border-radius: 10px;
+    margin:20px 0;
+    cursor: pointer;
+    padding:0 10px;
+    text-align: center;
+  }
+
+  .main-box{
+    display:flex;
+    align-items: center;
+  }
+</style>
+<body>
+  <div class="main-box">
+    <div>
+      <span class="btn1">指示發球</span>
+      <span class="btn2">界內球</span>
+      <span class="btn3">界外球</span>
+      <span class="btn10">延誤發球</span>
+      <span class="btn11">球未拋《放》離手發球</span>
+      <span class="btn12">比賽結束</span>
+      <span class="btn13">交換場地</span>
+      <span class="btn16">後排攻擊犯規</span>
+    </div>
+    <div id="ytplayer" style="margin:0 20px; width:440px;">
+    </div>
+    <div>
+      <span class="btn4">出球觸界</span>
+      <span class="btn5">持球</span>
+      <span class="btn6">連擊</span>
+      <span class="btn7">四次擊球</span>
+      <span class="btn8">越網擊球</span>
+      <span class="btn9">後排攻擊犯規</span>
+      <span class="btn14">觸網</span>
+      <span class="btn15">越中線</span>
+    </div>
+  </div>
+</body>
+
+
+<script>
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      height: '260',
+      width: '440',
+      videoId: 'UhkzmzqCR3Q',
+      playerVars: {
+        autoplay: 0, // 在讀取時自動播放影片
+        modestbranding: 1, // 隱藏YouTube Logo
+        mute: 1, // 靜音
+        start:0,
+      },
+    });
+  }
+  
+  console.log('123');
+  console.log(document.getElementsByClassName('btn1'));
+
+  document.getElementsByClassName('btn1')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',7)
+  }
+
+  document.getElementsByClassName('btn2')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',23)
+
+  }
+  document.getElementsByClassName('btn3')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',28)
+  }
+  document.getElementsByClassName('btn4')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',35)
+  }
+  document.getElementsByClassName('btn5')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',41)
+  }
+  document.getElementsByClassName('btn6')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',46)
+  }
+  document.getElementsByClassName('btn7')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',52)
+  }
+  document.getElementsByClassName('btn8')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',58)
+  }
+  document.getElementsByClassName('btn9')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',63)
+  }
+  document.getElementsByClassName('btn10')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',69)
+  }
+  document.getElementsByClassName('btn11')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',75)
+  }
+  document.getElementsByClassName('btn12')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',116)
+  }
+  document.getElementsByClassName('btn13')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',112)
+  }
+  document.getElementsByClassName('btn14')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',130)
+  }
+  document.getElementsByClassName('btn15')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',136)
+  }
+  document.getElementsByClassName('btn16')[0].onclick = function(){
+    player.loadVideoById('UhkzmzqCR3Q',142)
+  }
+</script>
+</html>
